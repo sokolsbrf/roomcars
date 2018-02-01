@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">RoomCars</string>
+
+    <string name="dialog_add_vendor">New vendor</string>
+    <string name="dialog_add_model">New model of %1$s</string>
+
+    <string name="action_parking">Parking</string>
+    <string name="title_activity_models">ModelsActivity</string>
+</resources>
