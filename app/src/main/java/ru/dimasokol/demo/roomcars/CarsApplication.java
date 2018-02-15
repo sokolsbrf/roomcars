@@ -10,12 +10,13 @@ import ru.dimasokol.demo.roomcars.database.CarsDatabase;
  */
 public class CarsApplication extends Application {
 
-    private CarsDatabase mDatabase;
+    private volatile CarsDatabase mDatabase;
 
     public CarsDatabase getDatabase() {
         if (mDatabase == null) {
             synchronized (CarsDatabase.class) {
                 if (mDatabase == null) {
+                    // При создании БД
                     mDatabase = Room.databaseBuilder(this, CarsDatabase.class, "cars")
                             .addMigrations(CarsDatabase.MIGRATION_1_2, CarsDatabase.MIGRATION_2_3)
                             .build();
